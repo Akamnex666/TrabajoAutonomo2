@@ -7,9 +7,9 @@
   let ids = [], valById = {}, colorNormal = [], colorGuayas = [], colorGye = [], el0 = null;
 
   function lerp(a, b, t) { return Math.round(a + (b - a) * t); }
-  function blue(t) {
+  function blue(t) { // rampa rosa neón (magnitud): tenue -> brillante
     t = Math.max(0, Math.min(1, t));
-    const s = [[0, [21, 52, 83]], [0.5, [47, 122, 214]], [1, [159, 198, 246]]];
+    const s = [[0, [42, 15, 34]], [0.5, [194, 37, 121]], [1, [255, 138, 196]]];
     let i = 0; while (i < s.length - 1 && t > s[i + 1][0]) i++;
     const c0 = s[i][1], c1 = s[Math.min(i + 1, s.length - 1)][1];
     const t0 = s[i][0], t1 = s[Math.min(i + 1, s.length - 1)][0];
@@ -33,14 +33,14 @@
 
     const maxV = Math.max.apply(null, ids.filter(i => i !== 'Ecuador').map(i => valById[i]));
     const bl = id => blue(Math.sqrt(valById[id] / maxV));
-    colorNormal = ids.map(id => id === 'Ecuador' ? '#12233a' : bl(id));
-    colorGuayas = ids.map(id => id === 'Ecuador' ? '#12233a' : (isGuayas(id) ? bl(id) : '#34343d'));
-    colorGye = ids.map(id => id === 'GUAYAS||GUAYAQUIL' ? '#f0a33c' : (isGuayas(id) ? bl(id) : '#34343d'));
+    colorNormal = ids.map(id => id === 'Ecuador' ? '#241333' : bl(id));
+    colorGuayas = ids.map(id => id === 'Ecuador' ? '#241333' : (isGuayas(id) ? bl(id) : '#2e2140'));
+    colorGye = ids.map(id => id === 'GUAYAS||GUAYAQUIL' ? '#ffc93f' : (isGuayas(id) ? bl(id) : '#2e2140'));
 
     const trace = {
       type: 'treemap', ids: ids, labels: labels, parents: parents, values: values,
       branchvalues: 'total', maxdepth: 2, level: 'Ecuador',
-      marker: { colors: colorNormal, line: { color: '#16161a', width: 2 } },
+      marker: { colors: colorNormal, line: { color: '#120a1f', width: 2 } },
       tiling: { pad: 2 },
       pathbar: { visible: true, thickness: 22, textfont: { color: '#c3c2b7', size: 12 } },
       texttemplate: '<b>%{label}</b><br>%{value}',

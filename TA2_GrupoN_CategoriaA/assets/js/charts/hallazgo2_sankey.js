@@ -30,7 +30,7 @@
     const trace = {
       type: 'sankey', arrangement: 'snap', orientation: 'h',
       node: {
-        pad: 16, thickness: 20, line: { color: '#16161a', width: 1 },
+        pad: 16, thickness: 20, line: { color: '#120a1f', width: 1 },
         label: S.nodes, color: nodeColor, x: nodeX,
         hovertemplate: '<b>%{label}</b><br>%{value} casos<extra></extra>'
       },

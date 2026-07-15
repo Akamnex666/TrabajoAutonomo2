@@ -5,33 +5,34 @@
 (function () {
   const C = {
     ink:   '#ffffff',
-    ink2:  '#c3c2b7',
-    muted: '#898781',
-    grid:  '#2c2c2a',
-    line:  '#383835',
-    surface: '#16161a',
-    // Series categóricas (orden CVD-seguro)
-    blue: '#3987e5', aqua: '#199e70', yellow: '#c98500', green: '#008300',
-    violet: '#9085e9', red: '#e66767', magenta: '#d55181', orange: '#d95926',
-    accent: '#e35555',
-    // Estado / nivel de riesgo
-    critical: '#d03b3b', serious: '#ec835a', warning: '#fab219', good: '#0ca30c',
-    // Rampa secuencial azul (magnitud) 100 -> 700
-    seq: ['#cde2fb', '#9ec5f4', '#6da7ec', '#3987e5', '#256abf', '#184f95', '#0d366b'],
-    // Rampa "calor" para intensidad de homicidios (un solo tono, oscuro->cálido)
+    ink2:  '#e6d5f0',
+    muted: '#a892bf',
+    grid:  'rgba(255,90,168,0.10)',
+    line:  'rgba(255,120,200,0.20)',
+    surface: '#1c102a',
+    // Neón Miami (estilo GTA VI)
+    pink: '#ff2e93', magenta: '#ff5aa8', purple: '#9b5cff', orange: '#ff6a2a',
+    yellow: '#ffc93f', cyan: '#16e0c8', red: '#ff3b6b', blue: '#5c8bff',
+    aqua: '#16e0c8', green: '#16e0c8', violet: '#9b5cff',
+    accent: '#ff2e93',
+    // Estado / nivel de riesgo (neón)
+    critical: '#ff2e93', serious: '#ff6a2a', warning: '#ffb020', good: '#16e0c8',
+    // Rampa secuencial rosa (magnitud) tenue -> brillante
+    seq: ['#2a0f22', '#5c1740', '#8f1d5e', '#c22579', '#e83b93', '#ff5aa8', '#ff8cc4'],
+    // Rampa "atardecer Miami" (púrpura -> magenta -> naranja -> amarillo)
     heat: [
-      [0.0, '#1b1b20'], [0.2, '#3a2233'], [0.4, '#6e2740'],
-      [0.6, '#a83346'], [0.8, '#d9563f'], [1.0, '#f0a33c']
+      [0.0, '#180a26'], [0.28, '#5e1a55'], [0.55, '#b02a6a'],
+      [0.78, '#ff5a3c'], [1.0, '#ffc93f']
     ]
   };
 
-  const categorical = [C.blue, C.aqua, C.yellow, C.green, C.violet, C.red, C.magenta, C.orange];
+  const categorical = [C.pink, C.cyan, C.yellow, C.orange, C.purple, C.magenta, C.blue, C.red];
 
   // Color por nivel de riesgo (estado, nunca serie)
   function riskColor(nivel) {
     if (/alto/i.test(nivel)) return C.critical;
     if (/medio/i.test(nivel)) return C.warning;
-    return C.aqua; // Bajo
+    return C.cyan; // Bajo
   }
 
   // Layout base de Plotly para modo oscuro
@@ -43,7 +44,7 @@
       margin: { l: 56, r: 20, t: 12, b: 44 },
       colorway: categorical,
       hoverlabel: {
-        bgcolor: '#26262c', bordercolor: C.line,
+        bgcolor: '#241333', bordercolor: 'rgba(255,120,200,0.4)',
         font: { color: C.ink, family: 'system-ui, sans-serif', size: 13 }
       },
       xaxis: { gridcolor: C.grid, zerolinecolor: C.line, linecolor: C.line, tickfont: { color: C.muted } },

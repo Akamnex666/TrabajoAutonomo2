@@ -8,7 +8,7 @@
   const DIAS = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
   const DIAS_LBL = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
   const FRANJAS = ['Madrugada', 'Mañana', 'Tarde', 'Noche'];
-  const scale = [[0, '#241016'], [0.28, '#5b1f28'], [0.55, '#963038'], [0.8, '#d1524a'], [1, '#f4936f']];
+  const scale = SA.C.heat; // atardecer Miami: púrpura -> magenta -> naranja -> amarillo
 
   function matrix(prov) {
     const z = FRANJAS.map(() => DIAS.map(() => 0));
@@ -24,12 +24,12 @@
 
   function rect(x0, x1, y0, y1) {
     return { type: 'rect', xref: 'x', yref: 'y', x0: x0, x1: x1, y0: y0, y1: y1,
-      line: { color: '#ffe08a', width: 3 }, fillcolor: 'rgba(0,0,0,0)', layer: 'above' };
+      line: { color: '#ffc93f', width: 3 }, fillcolor: 'rgba(0,0,0,0)', layer: 'above' };
   }
   function note(x, y, text) {
     return { x: x, y: y, xref: 'x', yref: 'y', text: text, showarrow: true, arrowhead: 3,
-      arrowcolor: '#ffe08a', ax: -46, ay: -40, font: { color: '#ffe08a', size: 13, family: 'system-ui, sans-serif' },
-      bgcolor: 'rgba(22,22,26,0.85)', bordercolor: '#ffe08a', borderpad: 4, borderwidth: 1 };
+      arrowcolor: '#ffc93f', ax: -46, ay: -40, font: { color: '#ffc93f', size: 13, family: 'system-ui, sans-serif' },
+      bgcolor: 'rgba(22,22,26,0.85)', bordercolor: '#ffc93f', borderpad: 4, borderwidth: 1 };
   }
 
   function draw(el, prov, shapes, annotations) {

@@ -119,8 +119,9 @@ Requisitos específicos de la Categoría A cubiertos:
 - **Plotly.js 2.35.2** (CDN) — gráficos avanzados interactivos (treemap, sankey, heatmap, bubble).
 - **GSAP 3.12.5 + ScrollTrigger + ScrollToPlugin** (CDN) — scroll horizontal, navegación y animación.
 - **HTML5 · CSS3 · JavaScript (ES6)** — estructura, estilos y lógica propia.
-- **Paleta de color** validada para accesibilidad (contraste y seguridad para daltonismo) en
-  modo oscuro.
+- **Identidad visual** inspirada en el sitio de *GTA VI*: neón Miami (degradado rosa→naranja→
+  amarillo), tipografía pesada en mayúsculas, fondos cinematográficos oscuros con glow y grano
+  de película. Aplicada de forma consistente en todos los gráficos y componentes.
 
 > **Recursos externos declarados:** las librerías Plotly.js y GSAP se cargan vía CDN. Toda la
 > integración, la narrativa, el layout de scroll y la lógica de los gráficos son de autoría propia

@@ -37,7 +37,7 @@
         marker: {
           size: rows.map(r => r.cantones || 1), sizemode: 'area',
           sizeref: 2.0 * maxCant / (52 * 52), sizemin: 6,
-          color: nv.color, opacity: 0.82, line: { color: '#16161a', width: 1.5 }
+          color: nv.color, opacity: 0.85, line: { color: '#120a1f', width: 1.5 }
         },
         hovertemplate: '<b>%{customdata[0]}</b><br>Total: %{x} homicidios<br>' +
           METRICS[metric].label + ': %{y}' + (METRICS[metric].suffix || '') + '<br>' +
@@ -58,9 +58,9 @@
 
   function ann(x, y, text, ax, ay) {
     return { x: x, y: y, xref: 'x', yref: 'y', text: text, showarrow: true, arrowhead: 3,
-      arrowcolor: '#f0a33c', ax: ax || -50, ay: ay || -34,
-      font: { color: '#f0a33c', size: 12.5, family: 'system-ui, sans-serif' },
-      bgcolor: 'rgba(22,22,26,0.85)', bordercolor: '#f0a33c', borderpad: 4, borderwidth: 1 };
+      arrowcolor: '#ffc93f', ax: ax || -50, ay: ay || -34,
+      font: { color: '#ffc93f', size: 12.5, family: 'system-ui, sans-serif' },
+      bgcolor: 'rgba(22,22,26,0.85)', bordercolor: '#ffc93f', borderpad: 4, borderwidth: 1 };
   }
 
   function draw(el, metric, annotations) {
