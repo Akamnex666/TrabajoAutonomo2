@@ -1,50 +1,48 @@
 /* ============================================================
-   theme.js — paleta compartida, defaults de Plotly y helpers
-   Paleta oscura validada con la skill dataviz (modo dark).
+   theme.js — Paleta criminalística sobria + defaults Plotly
+   Carbón, blanco roto, carmesí, plomo/gris metálico.
    ============================================================ */
 (function () {
-  const C = {
-    ink:   '#ffffff',
-    ink2:  '#e6d5f0',
-    muted: '#a892bf',
-    grid:  'rgba(255,90,168,0.10)',
-    line:  'rgba(255,120,200,0.20)',
-    surface: '#1c102a',
-    // Neón Miami (estilo GTA VI)
-    pink: '#ff2e93', magenta: '#ff5aa8', purple: '#9b5cff', orange: '#ff6a2a',
-    yellow: '#ffc93f', cyan: '#16e0c8', red: '#ff3b6b', blue: '#5c8bff',
-    aqua: '#16e0c8', green: '#16e0c8', violet: '#9b5cff',
-    accent: '#ff2e93',
-    // Estado / nivel de riesgo (neón)
-    critical: '#ff2e93', serious: '#ff6a2a', warning: '#ffb020', good: '#16e0c8',
-    // Rampa secuencial rosa (magnitud) tenue -> brillante
-    seq: ['#2a0f22', '#5c1740', '#8f1d5e', '#c22579', '#e83b93', '#ff5aa8', '#ff8cc4'],
-    // Rampa "atardecer Miami" (púrpura -> magenta -> naranja -> amarillo)
+  var C = {
+    ink:   '#e0e0e0',
+    ink2:  '#b8b8b8',
+    muted: '#6b7280',
+    grid:  'rgba(139, 144, 154, 0.1)',
+    line:  'rgba(139, 144, 154, 0.22)',
+    surface: '#1a1b20',
+    /* Acentos */
+    crimson: '#d90429', red: '#ef233c', amber: '#9ca3af', yellow: '#c5c9d0',
+    blue: '#4a5568', emerald: '#6b7280', cyan: '#8b909a', orange: '#8b909a',
+    /* Alias compatibilidad */
+    pink: '#d90429', magenta: '#ef233c', purple: '#4a5568', aqua: '#8b909a',
+    accent: '#d90429', green: '#6b7280', violet: '#4a5568', lead: '#8b909a',
+    /* Riesgo */
+    critical: '#d90429', serious: '#ef233c', warning: '#9ca3af', good: '#6b7280',
+    /* Rampas */
+    seq: ['#1a0a0e', '#3b0a14', '#6b0f1a', '#a11324', '#d90429', '#ef233c', '#f87171'],
     heat: [
-      [0.0, '#180a26'], [0.28, '#5e1a55'], [0.55, '#b02a6a'],
-      [0.78, '#ff5a3c'], [1.0, '#ffc93f']
+      [0.0,  '#0b0c10'], [0.28, '#1a1b20'], [0.55, '#6b0f1a'],
+      [0.78, '#d90429'], [1.0,  '#ef233c']
     ]
   };
 
-  const categorical = [C.pink, C.cyan, C.yellow, C.orange, C.purple, C.magenta, C.blue, C.red];
+  var categorical = [C.crimson, C.lead, C.slate || C.blue, C.muted, C.red, C.amber, C.cyan, C.violet];
 
-  // Color por nivel de riesgo (estado, nunca serie)
   function riskColor(nivel) {
     if (/alto/i.test(nivel)) return C.critical;
     if (/medio/i.test(nivel)) return C.warning;
-    return C.cyan; // Bajo
+    return C.good;
   }
 
-  // Layout base de Plotly para modo oscuro
   function baseLayout(extra) {
-    const base = {
+    var base = {
       paper_bgcolor: 'rgba(0,0,0,0)',
       plot_bgcolor: 'rgba(0,0,0,0)',
-      font: { family: 'system-ui, -apple-system, Segoe UI, sans-serif', color: C.ink2, size: 13 },
+      font: { family: '"Segoe UI", system-ui, -apple-system, sans-serif', color: C.ink2, size: 13 },
       margin: { l: 56, r: 20, t: 12, b: 44 },
       colorway: categorical,
       hoverlabel: {
-        bgcolor: '#241333', bordercolor: 'rgba(255,120,200,0.4)',
+        bgcolor: '#1a1b20', bordercolor: 'rgba(217, 4, 41, 0.35)',
         font: { color: C.ink, family: 'system-ui, sans-serif', size: 13 }
       },
       xaxis: { gridcolor: C.grid, zerolinecolor: C.line, linecolor: C.line, tickfont: { color: C.muted } },
@@ -54,7 +52,7 @@
     return Object.assign(base, extra || {});
   }
 
-  const config = { displayModeBar: false, responsive: true, doubleClick: 'reset' };
+  var config = { displayModeBar: false, responsive: true, doubleClick: 'reset' };
 
-  window.SA = { C, categorical, riskColor, baseLayout, config, charts: {}, plots: {} };
+  window.SA = { C: C, categorical: categorical, riskColor: riskColor, baseLayout: baseLayout, config: config, charts: {}, plots: {} };
 })();

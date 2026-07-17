@@ -8,7 +8,7 @@
   const DIAS = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
   const DIAS_LBL = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
   const FRANJAS = ['Madrugada', 'Mañana', 'Tarde', 'Noche'];
-  const scale = SA.C.heat; // atardecer Miami: púrpura -> magenta -> naranja -> amarillo
+  const scale = SA.C.heat; // azul oscuro -> carmesí -> ámbar
 
   function matrix(prov) {
     const z = FRANJAS.map(() => DIAS.map(() => 0));
@@ -24,12 +24,12 @@
 
   function rect(x0, x1, y0, y1) {
     return { type: 'rect', xref: 'x', yref: 'y', x0: x0, x1: x1, y0: y0, y1: y1,
-      line: { color: '#ffc93f', width: 3 }, fillcolor: 'rgba(0,0,0,0)', layer: 'above' };
+      line: { color: '#f59e0b', width: 3 }, fillcolor: 'rgba(0,0,0,0)', layer: 'above' };
   }
   function note(x, y, text) {
     return { x: x, y: y, xref: 'x', yref: 'y', text: text, showarrow: true, arrowhead: 3,
-      arrowcolor: '#ffc93f', ax: -46, ay: -40, font: { color: '#ffc93f', size: 13, family: 'system-ui, sans-serif' },
-      bgcolor: 'rgba(22,22,26,0.85)', bordercolor: '#ffc93f', borderpad: 4, borderwidth: 1 };
+      arrowcolor: '#f59e0b', ax: -46, ay: -40, font: { color: '#f59e0b', size: 13, family: 'system-ui, sans-serif' },
+      bgcolor: 'rgba(13,27,42,0.85)', bordercolor: '#f59e0b', borderpad: 4, borderwidth: 1 };
   }
 
   function draw(el, prov, shapes, annotations) {
@@ -37,13 +37,13 @@
     const trace = {
       type: 'heatmap', x: DIAS_LBL, y: FRANJAS, z: m.z, colorscale: scale, zmin: 0,
       xgap: 3, ygap: 3,
-      colorbar: { title: { text: 'casos', font: { color: '#898781', size: 11 } }, tickfont: { color: '#898781', size: 11 }, thickness: 12, len: 0.9, outlinewidth: 0 },
+      colorbar: { title: { text: 'casos', font: { color: '#7d8590', size: 11 } }, tickfont: { color: '#7d8590', size: 11 }, thickness: 12, len: 0.9, outlinewidth: 0 },
       hovertemplate: '%{y} · %{x}<br><b>%{z} homicidios</b><extra></extra>'
     };
     const layout = SA.baseLayout({
       margin: { l: 84, r: 10, t: 6, b: 40 },
-      yaxis: { autorange: 'reversed', tickfont: { color: '#c3c2b7', size: 12 }, gridcolor: 'rgba(0,0,0,0)' },
-      xaxis: { tickfont: { color: '#c3c2b7', size: 12 }, gridcolor: 'rgba(0,0,0,0)' },
+      yaxis: { autorange: 'reversed', tickfont: { color: '#7d8590', size: 12 }, gridcolor: 'rgba(0,0,0,0)' },
+      xaxis: { tickfont: { color: '#7d8590', size: 12 }, gridcolor: 'rgba(0,0,0,0)' },
       shapes: shapes || [], annotations: annotations || []
     });
     Plotly.react(el, [trace], layout, SA.config);

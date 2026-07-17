@@ -15,9 +15,9 @@
     const k = window.SA_DATA.kpis;
     return [
       { value: k.total,          decimals: 0, unit: '',  thousand: true,  accent: SA.C.accent, label: 'Muertes violentas registradas', sub: 'Enero – mayo 2026 · 23 provincias' },
-      { value: k.pct_arma_fuego, decimals: 1, unit: '%', thousand: false, accent: SA.C.orange, label: 'Cometidos con arma de fuego',    sub: 'La pistola es el arma dominante' },
-      { value: k.pct_noche,      decimals: 1, unit: '%', thousand: false, accent: SA.C.purple, label: 'Ocurren de noche o madrugada',   sub: 'Pico en fines de semana' },
-      { value: k.pct_guayas,     decimals: 1, unit: '%', thousand: false, accent: SA.C.cyan,   label: 'Concentrados en Guayas',        sub: '1 de cada 4 solo en Guayaquil' }
+      { value: k.pct_arma_fuego, decimals: 1, unit: '%', thousand: false, accent: SA.C.red,    label: 'Cometidos con arma de fuego',    sub: 'La pistola es el arma dominante' },
+      { value: k.pct_noche,      decimals: 1, unit: '%', thousand: false, accent: SA.C.lead,   label: 'Ocurren de noche o madrugada',   sub: 'Pico en fines de semana' },
+      { value: k.pct_guayas,     decimals: 1, unit: '%', thousand: false, accent: SA.C.blue,   label: 'Concentrados en Guayas',        sub: '1 de cada 4 solo en Guayaquil' }
     ];
   }
 

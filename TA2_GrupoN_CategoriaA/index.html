@@ -4,12 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SafeAnalytics EC · Radiografía de la violencia homicida en Ecuador</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0d0d'/%3E%3Crect x='6' y='17' width='4.5' height='9' rx='1.4' fill='%233987e5'/%3E%3Crect x='13.75' y='11' width='4.5' height='15' rx='1.4' fill='%23f0a33c'/%3E%3Crect x='21.5' y='6' width='4.5' height='20' rx='1.4' fill='%23e35555'/%3E%3C/svg%3E" />
-  <meta name="description" content="Storytelling interactivo con scroll horizontal sobre 3.485 homicidios en Ecuador (ene–may 2026). TA-2 IS-604 ULEAM · Categoría A." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0c10'/%3E%3Crect x='6' y='17' width='4.5' height='9' rx='1.4' fill='%234a5568'/%3E%3Crect x='13.75' y='11' width='4.5' height='15' rx='1.4' fill='%236b7280'/%3E%3Crect x='21.5' y='6' width='4.5' height='20' rx='1.4' fill='%23d90429'/%3E%3C/svg%3E" />
+  <meta name="description" content="Storytelling interactivo con scroll vertical sobre 3.485 homicidios en Ecuador (ene–may 2026). TA-2 IS-604 ULEAM." />
   <link rel="preconnect" href="https://cdn.plot.ly" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body data-palette="#3987e5,#199e70,#c98500,#008300,#9085e9,#e66767,#d55181,#d95926">
+<body data-palette="#d90429,#8b909a,#6b7280,#9ca3af,#4a5568,#ef233c">
+
+  <!-- Lienzo continuo (fondo global fijo) -->
+  <div id="canvas-bg" aria-hidden="true"></div>
 
   <div id="progress"></div>
 
@@ -18,48 +21,47 @@
     <div>SafeAnalytics&nbsp;EC <small>· IS-604 ULEAM</small></div>
   </div>
 
-  <nav id="nav-dots" aria-label="Navegación por secciones"></nav>
-  <button id="nav-prev" class="nav-arrow" aria-label="Sección anterior">‹</button>
-  <button id="nav-next" class="nav-arrow" aria-label="Sección siguiente">›</button>
-
+  <!-- Narrativa continua: secciones = contenedores invisibles -->
+  <div id="smooth-wrapper">
   <main id="scroll-container">
-    <div id="track">
 
       <!-- [1] PORTADA -->
       <section class="panel" id="panel-portada" data-title="Portada">
+        <div class="parallax-orb orb-portada-1"></div>
+        <div class="parallax-orb orb-portada-2"></div>
+        <div class="parallax-orb orb-portada-3"></div>
         <div class="panel-inner">
-          <span class="portada-tag"><span class="dot"></span> Visualización de datos interactiva · Storytelling</span>
-          <h1 class="portada-title">Radiografía de la<br><span>violencia homicida</span><br>en Ecuador</h1>
-          <p class="lead portada-sub">3.485 homicidios en apenas cinco meses. Detrás de cada cifra, un patrón de <strong class="hl">territorio, arma, tiempo y víctima</strong> que este análisis vuelve visible para orientar decisiones de seguridad.</p>
-          <div class="portada-meta">
+          <span class="portada-tag anim"><span class="dot"></span> Visualizacion de datos interactiva · Storytelling</span>
+          <h1 class="portada-title anim">Radiografia de la violencia homicida en Ecuador</h1>
+          <p class="lead portada-sub anim">3.485 homicidios en apenas cinco meses. Detras de cada cifra, un patron de <strong class="hl">territorio, arma, tiempo y victima</strong> que este analisis vuelve visible para orientar decisiones de seguridad.</p>
+          <div class="portada-meta anim">
             <div class="item"><div class="k">Dataset</div><div class="v">SafeAnalytics EC · Ene–May 2026</div></div>
             <div class="item"><div class="k">Registros</div><div class="v">3.485 homicidios · 23 provincias</div></div>
             <div class="item"><div class="k">Grupo</div><div class="v">Grupo N — IS-604</div></div>
             <div class="item">
               <div class="k">Herramientas</div>
-              <div class="tool-chips"><span>Plotly.js</span><span>GSAP · ScrollTrigger</span><span>HTML · CSS · JS</span></div>
+          <div class="tool-chips"><span>Plotly.js</span><span>GSAP · Lenis</span><span>HTML · CSS · JS</span></div>
             </div>
           </div>
         </div>
-        <div class="scroll-hint"><span class="arrow">→</span> Desplázate para recorrer la historia</div>
       </section>
 
-      <!-- [2] INTRODUCCIÓN Y CONTEXTO -->
+      <!-- [2] CONTEXTO + KPIs -->
       <section class="panel" data-title="Contexto">
+        <div class="parallax-orb orb-contexto"></div>
         <div class="panel-inner">
-          <div class="sec-index">[2] · Introducción y contexto</div>
+          <div class="sec-index anim">[2] · Introduccion y contexto</div>
           <div class="two-col">
             <div class="narr">
-              <h2>¿Por qué mirar<br>estos datos?</h2>
-            </div>
-            <div>
-              <p class="lead">Ecuador atraviesa la crisis de seguridad más severa de su historia reciente. Entre <strong class="hl">enero y mayo de 2026</strong> se registraron <strong class="txt-accent">3.485 muertes violentas</strong> distribuidas de forma muy desigual por el territorio.</p>
-              <p>El problema para cualquier autoridad no es la falta de datos, sino la <strong class="hl">falta de foco</strong>: sin entender <em>dónde</em>, <em>cómo</em>, <em>cuándo</em> y <em>a quién</em> golpea la violencia, los recursos de seguridad se dispersan.</p>
-              <div class="narr" style="max-width:none">
-                <div class="interp">
-                  <p><strong class="hl">Pregunta de negocio.</strong> ¿Qué patrones de concentración territorial, modus operandi y perfil de víctima permiten priorizar la intervención policial y anticipar el riesgo por provincia?</p>
-                </div>
+              <h2 class="anim">Por que mirar estos datos?</h2>
+              <p class="lead anim">Ecuador atraviesa la crisis de seguridad mas severa de su historia reciente. Entre <strong class="hl">enero y mayo de 2026</strong> se registraron <strong class="txt-accent">3.485 muertes violentas</strong> distribuidas de forma muy desigual por el territorio.</p>
+              <p class="anim">El problema para cualquier autoridad no es la falta de datos, sino la <strong class="hl">falta de foco</strong>: sin entender <em>donde</em>, <em>como</em>, <em>cuando</em> y <em>a quien</em> golpea la violencia, los recursos de seguridad se dispersan.</p>
+              <div class="interp anim">
+                <p><strong class="hl">Pregunta de negocio.</strong> Que patrones de concentracion territorial, modus operandi y perfil de victima permiten priorizar la intervencion policial y anticipar el riesgo por provincia?</p>
               </div>
+            </div>
+            <div class="kpi-col">
+              <div class="kpi-grid" id="kpi-grid"></div>
             </div>
           </div>
         </div>
@@ -68,71 +70,67 @@
       <!-- [3] OBJETIVOS -->
       <section class="panel" data-title="Objetivos">
         <div class="panel-inner">
-          <div class="sec-index">[3] · Objetivos del análisis</div>
-          <h2>Tres objetivos medibles</h2>
-          <p class="lead">El análisis se propone responder con evidencia cuantificable:</p>
+          <div class="sec-index anim">[3] · Objetivos del analisis</div>
+          <h2 class="anim">Tres objetivos medibles</h2>
+          <p class="lead anim">El analisis se propone responder con evidencia cuantificable:</p>
           <div class="obj-grid">
-            <div class="obj-card reveal">
+            <div class="obj-card anim">
               <div class="num">01</div>
               <h3>Localizar la violencia</h3>
-              <p>Cuantificar la concentración geográfica e identificar las provincias y cantones que acumulan el mayor porcentaje de homicidios.</p>
+              <p>Cuantificar la concentracion geografica e identificar las provincias y cantones que acumulan el mayor porcentaje de homicidios.</p>
             </div>
-            <div class="obj-card reveal">
+            <div class="obj-card anim">
               <div class="num">02</div>
               <h3>Caracterizar el modus operandi</h3>
-              <p>Medir el peso del arma de fuego, del espacio público y de la franja horaria para describir cómo ocurre la violencia.</p>
+              <p>Medir el peso del arma de fuego, del espacio publico y de la franja horaria para describir como ocurre la violencia.</p>
             </div>
-            <div class="obj-card reveal">
+            <div class="obj-card anim">
               <div class="num">03</div>
-              <h3>Priorizar por riesgo</h3>
-              <p>Construir un ranking de riesgo provincial que relacione volumen, tendencia y letalidad para orientar la intervención.</p>
+              <h3>Identificar patrones temporales</h3>
+              <p>Descubrir los dias, horas y franjas horarias de mayor concentracion para anticipar el riesgo y optimizar el despliegue policial.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- [4] KPIs ANIMADOS -->
-      <section class="panel" data-title="Cifras clave">
-        <div class="panel-inner">
-          <div class="sec-index">[4] · La radiografía en cifras</div>
-          <h2>Cinco meses, cuatro señales</h2>
-          <p class="lead">Indicadores clave que resumen la escala y la naturaleza del fenómeno.</p>
-          <div class="kpi-grid" id="kpi-grid"><!-- KPIs animados inyectados por JS --></div>
-        </div>
-      </section>
-
-      <!-- [5] HALLAZGO 1 — TREEMAP (scrollytelling, 3 pasos) -->
-      <section class="panel story" data-title="Hallazgo 1 · ¿Dónde?" data-story="chart-treemap" data-steps="3">
+      <!-- [4] HALLAZGO 1 — TREEMAP -->
+      <section class="panel story" data-title="Hallazgo 1" data-story="chart-treemap" data-steps="3">
         <div class="panel-inner story-inner">
           <div class="story-narr">
-            <div class="sec-index">[5] · Hallazgo 1 — ¿Dónde ocurre?</div>
+            <div class="sec-index anim">[4] · Hallazgo 1 — Donde ocurre?</div>
             <div class="steps">
               <div class="step active">
-                <h2>La violencia<br>tiene un mapa</h2>
-                <p>3.485 homicidios repartidos en 23 provincias. A primera vista, un problema nacional… pero el tamaño de cada bloque cuenta otra historia.</p>
+                <h2>La violencia tiene un mapa</h2>
+                <p class="anim">3.485 homicidios repartidos en 23 provincias. A primera vista, un problema nacional... pero el tamano de cada bloque cuenta otra historia.</p>
               </div>
               <div class="step">
-                <h2>Todo pesa<br>en Guayas</h2>
-                <p>Una sola provincia concentra el <strong class="hl">43,6%</strong> de los homicidios del país: más que las otras 22 juntas.</p>
-                <div class="interp"><p><span class="big">1.521 homicidios</span>solo en Guayas.</p></div>
+                <h2>Todo pesa en Guayas</h2>
+                <p class="anim">Una sola provincia concentra el <strong class="hl">43,6%</strong> de los homicidios del pais: mas que las otras 22 juntas.</p>
+                <div class="interp anim"><p><span class="big">1.521 homicidios</span>solo en Guayas.</p></div>
               </div>
               <div class="step">
-                <h2>El epicentro:<br>Guayaquil</h2>
-                <p>Y dentro de Guayas, el cantón <strong class="txt-accent">Guayaquil</strong> reúne 1 de cada 4 homicidios de todo el Ecuador. La violencia es profundamente local.</p>
-                <div class="interp"><p><span class="big">944 homicidios (27%)</span>concentrados en un solo cantón.</p></div>
+                <h2>El epicentro: Guayaquil</h2>
+                <p class="anim">Y dentro de Guayas, el canton <strong class="txt-accent">Guayaquil</strong> reune 1 de cada 4 homicidios de todo el Ecuador. La violencia es profundamente local.</p>
+                <div class="interp anim"><p><span class="big">944 homicidios (27%)</span>concentrados en un solo canton.</p></div>
               </div>
             </div>
             <div class="step-nav">
-              <div class="step-dots"><span></span><span></span><span></span></div>
-              <span class="step-count">Paso 1 / 3</span>
-              <span class="scroll-cue">sigue desplazándote <span class="arrow">→</span></span>
+              <div class="step-track" aria-hidden="true"><div class="step-track-fill"></div></div>
+              <div class="step-nav-row">
+                <div class="step-dots"><span></span><span></span><span></span></div>
+                <span class="step-count">Paso 1 / 3</span>
+              </div>
+            </div>
+            <div class="controls anim">
+              <label for="sel-treemap-prov">Explora tu mismo</label>
+              <select id="sel-treemap-prov" class="ctrl" aria-label="Filtrar por provincia"></select>
             </div>
           </div>
           <div class="story-viz">
-            <div class="chart-card">
+            <div class="chart-card anim">
               <div class="chart-head">
-                <div class="chart-title">Homicidios por provincia y cantón</div>
-                <div class="chart-note">Tamaño = nº de homicidios · clic para explorar</div>
+                <div class="chart-title">Homicidios por provincia y canton</div>
+                <div class="chart-note">Tamano = n de homicidios</div>
               </div>
               <div id="chart-treemap" class="plot"></div>
             </div>
@@ -140,43 +138,54 @@
         </div>
       </section>
 
-      <!-- [6] HALLAZGO 2 — SANKEY (scrollytelling, 4 pasos) -->
-      <section class="panel story" data-title="Hallazgo 2 · ¿Cómo?" data-story="chart-sankey" data-steps="4">
+      <!-- [5] HALLAZGO 2 — SANKEY -->
+      <section class="panel story" data-title="Hallazgo 2" data-story="chart-sankey" data-steps="4">
         <div class="panel-inner story-inner">
           <div class="story-narr">
-            <div class="sec-index">[6] · Hallazgo 2 — ¿Cómo ocurre?</div>
+            <div class="sec-index anim">[5] · Hallazgo 2 — Como ocurre?</div>
             <div class="steps">
               <div class="step active">
-                <h2>Sigue<br>el rastro</h2>
-                <p>Cada homicidio deja un rastro: del tipo de muerte al arma, al lugar y a la hora. Sigámoslo de izquierda a derecha.</p>
+                <h2>Sigue el rastro</h2>
+                <p class="anim">Cada homicidio deja un rastro: del tipo de muerte al arma, al lugar y a la hora. Sigamoslo de izquierda a derecha.</p>
               </div>
               <div class="step">
-                <h2>Un arma<br>manda</h2>
-                <p>Casi todo el flujo desemboca en un arma de fuego: la pistola.</p>
-                <div class="interp"><p><span class="big">87,8%</span>de los casos con arma de fuego.</p></div>
+                <h2>Un arma manda</h2>
+                <p class="anim">Casi todo el flujo desemboca en un arma de fuego: la pistola.</p>
+                <div class="interp anim"><p><span class="big">87,8%</span>de los casos con arma de fuego.</p></div>
               </div>
               <div class="step">
-                <h2>A plena<br>calle</h2>
-                <p>De ahí, el rastro va al espacio público: la violencia ocurre a la vista de todos.</p>
-                <div class="interp"><p><span class="big">72%</span>en lugares públicos.</p></div>
+                <h2>A plena calle</h2>
+                <p class="anim">De ahi, el rastro va al espacio publico: la violencia ocurre a la vista de todos.</p>
+                <div class="interp anim"><p><span class="big">72%</span>en lugares publicos.</p></div>
               </div>
               <div class="step">
-                <h2>Cuando cae<br>la noche</h2>
-                <p>El destino final del flujo es la noche y la madrugada. El modus operandi se completa: <strong class="txt-accent">pistola, calle, oscuridad</strong>.</p>
-                <div class="interp"><p><span class="big">60%</span>de noche o madrugada.</p></div>
+                <h2>Cuando cae la noche</h2>
+                <p class="anim">El destino final del flujo es la noche y la madrugada. El modus operandi se completa: <strong class="txt-accent">pistola, calle, oscuridad</strong>.</p>
+                <div class="interp anim"><p><span class="big">60%</span>de noche o madrugada.</p></div>
               </div>
             </div>
             <div class="step-nav">
-              <div class="step-dots"><span></span><span></span><span></span><span></span></div>
-              <span class="step-count">Paso 1 / 4</span>
-              <span class="scroll-cue">sigue desplazándote <span class="arrow">→</span></span>
+              <div class="step-track" aria-hidden="true"><div class="step-track-fill"></div></div>
+              <div class="step-nav-row">
+                <div class="step-dots"><span></span><span></span><span></span><span></span></div>
+                <span class="step-count">Paso 1 / 4</span>
+              </div>
+            </div>
+            <div class="controls anim">
+              <label for="sel-sankey-filter">Resaltar por dimension</label>
+              <select id="sel-sankey-filter" class="ctrl" aria-label="Filtrar flujo Sankey">
+                <option value="all">Flujo completo</option>
+                <option value="weapon">Arma de fuego</option>
+                <option value="public">Espacio publico</option>
+                <option value="night">Horario nocturno</option>
+              </select>
             </div>
           </div>
           <div class="story-viz">
-            <div class="chart-card">
+            <div class="chart-card anim">
               <div class="chart-head">
                 <div class="chart-title">Del tipo de muerte al arma, el lugar y la hora</div>
-                <div class="chart-note">Grosor = nº de casos</div>
+                <div class="chart-note">Grosor = n de casos</div>
               </div>
               <div id="chart-sankey" class="plot"></div>
             </div>
@@ -184,42 +193,44 @@
         </div>
       </section>
 
-      <!-- [7] HALLAZGO 3 — HEATMAP día x franja (scrollytelling, 3 pasos + FILTRO) -->
-      <section class="panel story" data-title="Hallazgo 3 · ¿Cuándo?" data-story="chart-heatmap" data-steps="3">
+      <!-- [6] HALLAZGO 3 — HEATMAP 2D -->
+      <section class="panel story" data-title="Hallazgo 3" data-story="chart-heatmap" data-steps="3">
         <div class="panel-inner story-inner">
           <div class="story-narr">
-            <div class="sec-index">[7] · Hallazgo 3 — ¿Cuándo ocurre?</div>
+            <div class="sec-index anim">[6] · Hallazgo 3 — Cuando ocurre?</div>
             <div class="steps">
               <div class="step active">
-                <h2>El pulso<br>de la semana</h2>
-                <p>Cada celda cruza un día con una franja horaria. El calor revela cuándo golpea la violencia.</p>
+                <h2>El pulso de la semana</h2>
+                <p class="anim">Cada celda cruza un dia con una franja horaria. El color revela cuando golpea la violencia.</p>
               </div>
               <div class="step">
-                <h2>La noche<br>concentra</h2>
-                <p>La franja nocturna es, de lejos, la más letal. Mira cómo se enciende la fila inferior.</p>
-                <div class="interp"><p><span class="big">60%</span>ocurre de noche o madrugada.</p></div>
+                <h2>La noche concentra</h2>
+                <p class="anim">La franja nocturna es, de lejos, la mas letal. Mira como se enciende la fila inferior.</p>
+                <div class="interp anim"><p><span class="big">60%</span>ocurre de noche o madrugada.</p></div>
               </div>
               <div class="step">
-                <h2>Guayas,<br>fin de semana</h2>
-                <p>Al filtrar Guayas el patrón se intensifica: <strong class="txt-accent">sábados y domingos por la noche</strong> marcan el pico de todo el país.</p>
-                <div class="interp"><p><span class="big">Sáb · Dom · Noche</span>el momento más peligroso.</p></div>
+                <h2>Guayas, fin de semana</h2>
+                <p class="anim">Al filtrar Guayas el patron se intensifica: <strong class="txt-accent">sabados y domingos por la noche</strong> marcan el pico de todo el pais.</p>
+                <div class="interp anim"><p><span class="big">Sab · Dom · Noche</span>el momento mas peligroso.</p></div>
               </div>
             </div>
             <div class="step-nav">
-              <div class="step-dots"><span></span><span></span><span></span></div>
-              <span class="step-count">Paso 1 / 3</span>
-              <span class="scroll-cue">sigue desplazándote <span class="arrow">→</span></span>
+              <div class="step-track" aria-hidden="true"><div class="step-track-fill"></div></div>
+              <div class="step-nav-row">
+                <div class="step-dots"><span></span><span></span><span></span></div>
+                <span class="step-count">Paso 1 / 3</span>
+              </div>
             </div>
-            <div class="controls" style="margin-top:20px">
-              <label for="sel-prov">Explora tú mismo</label>
+            <div class="controls anim">
+              <label for="sel-prov">Explora tu mismo</label>
               <select id="sel-prov" class="ctrl" aria-label="Filtrar por provincia"></select>
               <span class="filter-tag" id="prov-total"></span>
             </div>
           </div>
           <div class="story-viz">
-            <div class="chart-card">
+            <div class="chart-card anim">
               <div class="chart-head">
-                <div class="chart-title">Homicidios por día de la semana y franja horaria</div>
+                <div class="chart-title">Homicidios por dia de la semana y franja horaria</div>
                 <div class="chart-note">Color = intensidad</div>
               </div>
               <div id="chart-heatmap" class="plot"></div>
@@ -228,132 +239,85 @@
         </div>
       </section>
 
-      <!-- [8] HALLAZGO 4 — BUBBLE GAPMINDER (scrollytelling, 3 pasos + FILTRO) -->
-      <section class="panel story" data-title="Hallazgo 4 · Riesgo" data-story="chart-bubble" data-steps="3">
-        <div class="panel-inner story-inner">
-          <div class="story-narr">
-            <div class="sec-index">[8] · Hallazgo 4 — El mapa del riesgo provincial</div>
-            <div class="steps">
-              <div class="step active">
-                <h2>Cada burbuja,<br>una provincia</h2>
-                <p>A la derecha, más homicidios; arriba, mayor letalidad con arma de fuego; el tamaño, cuántos cantones están afectados.</p>
-              </div>
-              <div class="step">
-                <h2>Guayas<br>domina</h2>
-                <p>Guayas manda en volumen y letalidad. Frente a él, el resto parece pequeño… pero el volumen esconde el riesgo.</p>
-                <div class="interp"><p><span class="big">Riesgo Alto · 84,2</span>la máxima prioridad de intervención.</p></div>
-              </div>
-              <div class="step">
-                <h2>El riesgo<br>se esconde</h2>
-                <p>Cambiamos el eje a la <strong class="txt-accent">variación mensual</strong>: provincias pequeñas se disparan (+100%, +300%). Son las alertas tempranas que el volumen no muestra.</p>
-                <div class="interp"><p><span class="big">+300% mensual</span>brotes que anticipan la próxima ola.</p></div>
-              </div>
-            </div>
-            <div class="step-nav">
-              <div class="step-dots"><span></span><span></span><span></span></div>
-              <span class="step-count">Paso 1 / 3</span>
-              <span class="scroll-cue">sigue desplazándote <span class="arrow">→</span></span>
-            </div>
-            <div class="controls" style="margin-top:20px">
-              <label for="sel-metric">Explora tú mismo</label>
-              <select id="sel-metric" class="ctrl" aria-label="Métrica del eje vertical"></select>
-            </div>
-          </div>
-          <div class="story-viz">
-            <div class="chart-card">
-              <div class="chart-head">
-                <div class="chart-title">Radiografía provincial del riesgo</div>
-                <div class="chart-note" id="bubble-note">X = total de homicidios (log)</div>
-              </div>
-              <div id="chart-bubble" class="plot"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- [9] CONCLUSIONES -->
+      <!-- [7] CONCLUSIONES -->
       <section class="panel" data-title="Conclusiones">
+        <div class="parallax-orb orb-conclusiones"></div>
         <div class="panel-inner">
-          <div class="sec-index">[9] · Conclusiones</div>
-          <h2>Respuestas a los objetivos</h2>
+          <div class="sec-index anim">[7] · Conclusiones</div>
+          <h2 class="anim">Respuestas a los objetivos</h2>
           <div class="concl-grid">
-            <div class="concl-card reveal">
+            <div class="concl-card anim">
               <div class="q">01</div>
-              <div><h3>La violencia se localiza</h3><p>Cuatro provincias de la costa concentran más del 80% de los homicidios y un solo cantón, Guayaquil, el 27%. El foco geográfico es inequívoco.</p></div>
+              <div><h3>La violencia se localiza</h3><p>Cuatro provincias de la costa concentran mas del 80% de los homicidios y un solo canton, Guayaquil, el 27%. El foco geografico es inequivoco.</p></div>
             </div>
-            <div class="concl-card reveal">
+            <div class="concl-card anim">
               <div class="q">02</div>
-              <div><h3>El modus operandi es estable</h3><p>Arma de fuego (87,8%), espacio público (72%) y horario nocturno (60%) definen un patrón dominante ligado a delincuencia común (96%).</p></div>
+              <div><h3>El modus operandi es estable</h3><p>Arma de fuego (87,8%), espacio publico (72%) y horario nocturno (60%) definen un patron dominante ligado a delincuencia comun (96%).</p></div>
             </div>
-            <div class="concl-card reveal">
+            <div class="concl-card anim">
               <div class="q">03</div>
-              <div><h3>El riesgo es priorizable</h3><p>El índice de riesgo ordena la intervención: Guayas y Manabí exigen acción inmediata; varias provincias pequeñas muestran alzas mensuales que anticipan brotes.</p></div>
-            </div>
-            <div class="concl-card reveal">
-              <div class="q">04</div>
-              <div><h3>La víctima tiene rostro</h3><p>Hombres jóvenes (91% varones; 60% entre 18 y 35 años). Cualquier política preventiva debe dirigirse a este grupo y a estos territorios.</p></div>
+              <div><h3>Los patrones temporales son explotables</h3><p>La noche y los fines de semana concentran el mayor volumen de homicidios. Este conocimiento permite optimizar el despliegue policial con precision.</p></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- [10] RECOMENDACIONES -->
+      <!-- [8] RECOMENDACIONES -->
       <section class="panel" data-title="Recomendaciones">
+        <div class="parallax-orb orb-recomend"></div>
         <div class="panel-inner">
-          <div class="sec-index">[10] · Recomendaciones y mejoras futuras</div>
-          <h2>Del dato a la acción</h2>
-          <p class="lead">Recomendaciones accionables priorizadas por nivel de riesgo.</p>
+          <div class="sec-index anim">[8] · Recomendaciones y mejoras futuras</div>
+          <h2 class="anim">Del dato a la accion</h2>
+          <p class="lead anim">Recomendaciones accionables priorizadas por nivel de riesgo.</p>
           <div class="rec-list">
-            <div class="rec-card reveal">
-              <span class="badge alto">Riesgo alto · Guayas, Manabí</span>
-              <h3>Intervención focalizada</h3>
-              <p>Concentrar inteligencia territorial y patrullaje en los cantones críticos (Guayaquil, Durán, Manta) con control intensivo de armas de fuego en vías públicas.</p>
+            <div class="rec-card anim">
+              <span class="badge alto">Riesgo alto · Guayas, Manabi</span>
+              <h3>Intervencion focalizada</h3>
+              <p>Concentrar inteligencia territorial y patrullaje en los cantones criticos (Guayaquil, Duran, Manta) con control intensivo de armas de fuego en vias publicas.</p>
             </div>
-            <div class="rec-card reveal">
+            <div class="rec-card anim">
               <span class="badge medio">Horario · nacional</span>
               <h3>Despliegue nocturno de fin de semana</h3>
               <p>Reforzar la presencia policial en la franja noche-madrugada de viernes a domingo, cuando se concentra el 60% de los homicidios.</p>
             </div>
-            <div class="rec-card reveal">
+            <div class="rec-card anim">
               <span class="badge bajo">Alertas tempranas</span>
               <h3>Monitoreo de provincias en alza</h3>
-              <p>Activar seguimiento semanal en provincias pequeñas con variación mensual alta (Sto. Domingo, Orellana, Bolívar) para anticipar brotes antes de que escalen.</p>
+              <p>Activar seguimiento semanal en provincias pequenas con variacion mensual alta (Sto. Domingo, Orellana, Bolivar) para anticipar brotes antes de que escalen.</p>
             </div>
           </div>
-          <div class="narr" style="max-width:none;margin-top:24px">
-            <div class="interp">
-              <p><strong class="hl">Mejoras futuras.</strong> Con más tiempo y datos incorporaríamos población por cantón para calcular <em>tasas</em> por 100.000 habitantes (no solo conteos), un mapa coroplético georreferenciado y una serie histórica multianual para separar tendencia de estacionalidad.</p>
-            </div>
+          <div class="interp anim" style="max-width:none;margin-top:20px">
+            <p><strong class="hl">Mejoras futuras.</strong> Con mas tiempo y datos incorporariamos poblacion por canton para calcular <em>tasas</em> por 100.000 habitantes (no solo conteos), un mapa coropletico georreferenciado y una serie historica multianual para separar tendencia de estacionalidad.</p>
           </div>
         </div>
       </section>
 
-      <!-- [11] CRÉDITOS -->
-      <section class="panel" id="panel-creditos" data-title="Créditos">
+      <!-- [9] CREDITOS -->
+      <section class="panel" id="panel-creditos" data-title="Creditos">
+        <div class="parallax-orb orb-creditos"></div>
         <div class="panel-inner">
-          <div class="sec-index">[11] · Créditos</div>
-          <h2>SafeAnalytics EC</h2>
-          <p class="lead">Trabajo Autónomo N.º 2 — Visualización de datos interactiva con storytelling.</p>
+          <div class="sec-index anim">[9] · Creditos</div>
+          <h2 class="anim">SafeAnalytics EC</h2>
+          <p class="lead anim">Trabajo Autonomo N. 2 — Visualizacion de datos interactiva con storytelling.</p>
           <div class="cred-grid">
-            <div class="cred-block">
-              <h3>Académico</h3>
+            <div class="cred-block anim">
+              <h3>Academico</h3>
               <ul>
-                <li>Carrera de Ingeniería de Software</li>
-                <li>Universidad Laica Eloy Alfaro de Manabí (ULEAM)</li>
-                <li>IS-604 · Visualización de Datos · 2026-1</li>
-                <li>Docente: Mgs. Anthony Christopher Legarda Albiño</li>
+                <li>Carrera de Ingenieria de Software</li>
+                <li>Universidad Laica Eloy Alfaro de Manabi (ULEAM)</li>
+                <li>IS-604 · Visualizacion de Datos · 2026-1</li>
+                <li>Docente: Mgs. Anthony Christopher Legarda Albino</li>
               </ul>
             </div>
-            <div class="cred-block">
-              <h3>Integrantes · Grupo N</h3>
+            <div class="cred-block anim">
+              <h3>Integrantes</h3>
               <ul>
-                <li>Integrante 1 — Contexto y objetivos</li>
-                <li>Integrante 2 — Hallazgo 1 y 2</li>
-                <li>Integrante 3 — Hallazgo 3 y 4</li>
-                <li>Integrante 4 — Conclusiones y recomendaciones</li>
+                <li>RUIZ LAVAYEN ELIZA ZHARICK</li>
+                <li>JANDRY JOSUE GUANOTUÑA CUZCO</li>
+                <li>SIGIFREDO NICOLAS ESPINAL VILLASAGUA</li>
               </ul>
             </div>
-            <div class="cred-block">
+            <div class="cred-block anim">
               <h3>Fuentes de datos</h3>
               <ul>
                 <li>SafeAnalytics EC — Dataset de homicidios</li>
@@ -361,11 +325,11 @@
                 <li>Periodo: enero–mayo 2026</li>
               </ul>
             </div>
-            <div class="cred-block">
-              <h3>Herramientas y librerías</h3>
+            <div class="cred-block anim">
+              <h3>Herramientas y librerias</h3>
               <ul>
-                <li>Plotly.js — gráficos avanzados interactivos</li>
-                <li>GSAP + ScrollTrigger — scroll horizontal y animación</li>
+                <li>Plotly.js — graficos avanzados interactivos</li>
+                <li>GSAP + ScrollTrigger + Lenis — scroll vertical cinematografico</li>
                 <li>HTML5 · CSS3 · JavaScript (ES6)</li>
               </ul>
             </div>
@@ -373,25 +337,24 @@
         </div>
       </section>
 
-    </div>
-  </main>
+    </main>
+  </div>
 
-  <!-- Librerías (CDN) -->
+  <!-- Librerias (CDN) -->
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 
-  <!-- Datos (embebidos como variable global: funciona incluso con file://) -->
+  <!-- Datos -->
   <script src="data/dataset.js"></script>
 
-  <!-- Lógica del proyecto -->
+  <!-- Logica del proyecto -->
   <script src="assets/js/charts/theme.js"></script>
   <script src="assets/js/charts/kpis.js"></script>
   <script src="assets/js/charts/hallazgo1_treemap.js"></script>
   <script src="assets/js/charts/hallazgo2_sankey.js"></script>
   <script src="assets/js/charts/hallazgo3_heatmap.js"></script>
-  <script src="assets/js/charts/hallazgo4_bubble.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
