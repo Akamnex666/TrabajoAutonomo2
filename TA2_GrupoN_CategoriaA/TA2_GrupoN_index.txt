@@ -1,15 +1,15 @@
 ÍNDICE DEL VIDEO — Trabajo Autónomo N° 2
-Grupo: [N°] | Categoría: A | IS-604 ULEAM 2026-1
+Grupo: N | Categoría: A | IS-604 ULEAM 2026-1
 ─────────────────────────────────────────────
-00:00 Introducción: contexto del problema y dataset (SafeAnalytics EC — 3.485 homicidios, ene–may 2026)
-0X:XX Objetivos del análisis
-0X:XX Hallazgo 1: ¿Dónde ocurre? — Concentración territorial (Treemap) — [nombre integrante]
-0X:XX Hallazgo 2: ¿Cómo ocurre? — Pistola, calle y noche (Sankey) — [nombre integrante]
-0X:XX Hallazgo 3: ¿Cuándo ocurre? — Fin de semana nocturno (Heatmap + filtro) — [nombre integrante]
-0X:XX Hallazgo 4: El mapa del riesgo provincial (Bubble Gapminder + filtro) — [nombre integrante]
-0X:XX Conclusiones — [nombre integrante]
-0X:XX Recomendaciones y mejoras futuras — [nombre integrante]
-0X:XX Créditos finales
+00:00  Introducción: contexto del problema y dataset (SafeAnalytics EC — 3.485 homicidios, ene–may 2026)
+01:30  Objetivos del análisis (3 objetivos medibles)
+02:15  Hallazgo 1: ¿Dónde ocurre? — Concentración territorial (Treemap) — Ruiz Lavayen Eliza Zharick
+03:45  Hallazgo 2: ¿Cómo ocurre? — Pistola, calle y noche (Sankey) — Guanotuña Cuzco Jandry Josué
+05:15  Hallazgo 3: ¿Cuándo ocurre? — Fin de semana nocturno (Heatmap + filtro) — Guanotuña Cuzco Jandry Josué
+06:45  Hallazgo 4: El mapa del riesgo provincial (Bubble Gapminder + filtro) — Espinal Villasagua Sigifredo Nicolás
+07:45  Conclusiones — Espinal Villasagua Sigifredo Nicolás
+08:45  Recomendaciones y mejoras futuras — Espinal Villasagua Sigifredo Nicolás
+09:30  Créditos finales
 ─────────────────────────────────────────────
 Enlace del video: [URL de descarga — Google Drive / OneDrive con acceso compartido]
 Enlace del proyecto: [URL GitHub / Drive del código]
