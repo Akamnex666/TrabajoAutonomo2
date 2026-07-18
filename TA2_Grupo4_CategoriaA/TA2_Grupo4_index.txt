@@ -12,4 +12,4 @@ Grupo: N | Categoría: A | IS-604 ULEAM 2026-1
 09:30  Créditos finales
 ─────────────────────────────────────────────
 Enlace del video: [URL de descarga — Google Drive / OneDrive con acceso compartido]
-Enlace del proyecto: [URL GitHub / Drive del código]
+Enlace del proyecto: https://github.com/Akamnex666/TrabajoAutonomo2
