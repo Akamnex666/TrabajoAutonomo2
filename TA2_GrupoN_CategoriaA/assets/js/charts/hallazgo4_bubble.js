@@ -92,8 +92,8 @@
       draw(el, 'pct_arma_fuego', [ann(1521, 91.2, 'Guayas: volumen + letalidad', -70, -30)]);
     } else {
       draw(el, 'variacion', [
-        ann(31, 400, 'Sto. Domingo +400%', -20, -30),
-        ann(7, 300, 'Bolívar +300%', -10, 34)
+        ann(31, 400, 'STO DGO +400%', -20, -30),
+        ann(7, 300, 'BOLÍVAR +300%', -10, 34)
       ]);
     }
   }

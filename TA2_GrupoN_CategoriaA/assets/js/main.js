@@ -12,7 +12,8 @@
     ['kpi-grid',      'kpis'],
     ['chart-treemap', 'treemap'],
     ['chart-sankey',  'sankey'],
-    ['chart-heatmap', 'heatmap']
+    ['chart-heatmap', 'heatmap'],
+    ['chart-bubble',  'bubble']
   ];
 
   function renderPanelCharts(panel) {
