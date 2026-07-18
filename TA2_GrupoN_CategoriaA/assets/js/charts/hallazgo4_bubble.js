@@ -20,7 +20,14 @@
     { key: 'Medio', color: C.warning },
     { key: 'Bajo',  color: C.aqua }
   ];
-  const LABEL_POS = { 'LOS RÍOS': 'bottom center', 'ESMERALDAS': 'bottom center', 'EL ORO': 'middle left' };
+  const LABEL_POS = {
+    'GUAYAS': 'bottom center',
+    'MANABÍ': 'top center',
+    'EL ORO': 'middle left',
+    'LOS RÍOS': 'bottom center',
+    'ESMERALDAS': 'top right',
+    'PICHINCHA': 'top right'
+  };
 
   function traces(metric) {
     const P = window.SA_DATA.provincias;
@@ -30,9 +37,9 @@
       return {
         type: 'scatter', mode: 'markers+text', name: 'Riesgo ' + nv.key,
         x: rows.map(r => r.total), y: rows.map(r => r[metric]),
-        text: rows.map(r => (r.total >= 100 ? r.provincia : '')),
+        text: rows.map(r => r.provincia),
         textposition: rows.map(r => LABEL_POS[r.provincia] || 'top center'),
-        textfont: { color: '#c3c2b7', size: 11 },
+        textfont: { color: '#c3c2b7', size: 10 },
         customdata: rows.map(r => [r.provincia, r.cantones, r.nivel]),
         marker: {
           size: rows.map(r => r.cantones || 1), sizemode: 'area',
