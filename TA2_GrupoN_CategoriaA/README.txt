@@ -34,7 +34,7 @@ Cumple: scroll horizontal, animacion scroll-triggered y 2 filtros dropdown.
 
 DATOS
 -----
-Fuente: SafeAnalytics EC — Dataset de homicidios (modelo estrella).
+Fuente: Datos Abiertos del Ecuador — Administración Pública (https://www.datosabiertos.gob.ec/group/administracion-publica).
 3.485 registros · 23 provincias · 138 cantones · periodo enero-mayo 2026.
 Archivos: data/dataset.json (formato requerido) y data/dataset.js (embebido).
 

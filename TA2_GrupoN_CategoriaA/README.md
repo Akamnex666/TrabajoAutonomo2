@@ -104,7 +104,7 @@ Requisitos específicos de la Categoría A cubiertos:
 
 ## 6. Datos
 
-- **Fuente:** SafeAnalytics EC — Dataset de homicidios (modelo estrella, `SafeAnalytics_EC_datos.xlsx`).
+- **Fuente:** <a href="https://www.datosabiertos.gob.ec/group/administracion-publica">Datos Abiertos del Ecuador — Administración Pública</a> (modelo estrella, `SafeAnalytics_EC_datos.xlsx`).
 - **Registros:** 3.485 homicidios · 23 provincias · 138 cantones.
 - **Periodo:** enero–mayo 2026.
 - El `dataset.json` fue generado a partir del modelo estrella (tablas `fact_homicidios`,

@@ -1,7 +1,7 @@
 ÍNDICE DEL VIDEO — Trabajo Autónomo N° 2
 Grupo: N | Categoría: A | IS-604 ULEAM 2026-1
 ─────────────────────────────────────────────
-00:00  Introducción: contexto del problema y dataset (SafeAnalytics EC — 3.485 homicidios, ene–may 2026)
+00:00  Introducción: contexto del problema y dataset (Datos Abiertos del Ecuador — 3.485 homicidios, ene–may 2026)
 01:30  Objetivos del análisis (3 objetivos medibles)
 02:15  Hallazgo 1: ¿Dónde ocurre? — Concentración territorial (Treemap) — Ruiz Lavayen Eliza Zharick
 03:45  Hallazgo 2: ¿Cómo ocurre? — Pistola, calle y noche (Sankey) — Guanotuña Cuzco Jandry Josué
