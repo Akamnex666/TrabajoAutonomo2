@@ -11,5 +11,5 @@ Grupo: N | Categoría: A | IS-604 ULEAM 2026-1
 08:45  Recomendaciones y mejoras futuras — Espinal Villasagua Sigifredo Nicolás
 09:30  Créditos finales
 ─────────────────────────────────────────────
-Enlace del video: [URL de descarga — Google Drive / OneDrive con acceso compartido]
+Enlace del video: https://drive.google.com/file/d/1MDFOsIu7NVJS69OD7oDq63EAfWzzdggL/view?usp=sharing
 Enlace del proyecto: https://github.com/Akamnex666/TrabajoAutonomo2
