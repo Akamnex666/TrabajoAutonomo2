@@ -28,7 +28,7 @@ y el día de les presentamos SafeAnalytics EC: una radiografía de la violencia
 homicida en Ecuador.
 
 Para el Trabajo Autónomo N°1 analizamos 3.485 homicidios ocurridos entre
-enero y mayo de 2026, extraídos de un modelo estrella de SafeAnalytics EC.
+enero y mayo de 2026, extraídos de un dataset de la pagina Datosabiertos.gob.ec
 Ese análisis quedó en un PDF estático. El TA-2 nos reta a transformarlo en una
 experiencia visual interactiva y narrada.
 
